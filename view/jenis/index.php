@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -53,8 +54,12 @@
                             <td><?php echo $result['id_jenis']; ?></td>
                             <td><?php echo $result['nama_jenis']; ?></td>
                     <td>
-                    <a class="btn btn-warning">Edit</a>
-                    <a class="btn btn-danger">Hapus</a>
+                    <a class="btn btn-warning" href="view_edit.php?id=<?php echo $result['id_barang']; ?>">
+            <i class="fa-solid fa-pen-to-square"></i>Edit
+        </a>
+        <a href="proses_hapus.php?id=<?php echo $result['id_barang']; ?>" 
+           onclick="return confirm('Yakin?')" 
+           class="btn btn-danger btn-sm">Hapus</a>
                 </tr>
                 <?php 
                     $no++;
